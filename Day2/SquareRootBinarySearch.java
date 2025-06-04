@@ -1,3 +1,4 @@
+package Day2;
 public class SquareRootBinarySearch {
     static int sqRoot(int n){
         int s = 0;

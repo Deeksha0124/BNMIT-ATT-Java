@@ -1,3 +1,4 @@
+package Day2;
 public class FirstLastTotalOccurrences {
 static int firstOcc(int arr[], int key){
     int s = 0;

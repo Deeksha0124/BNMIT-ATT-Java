@@ -1,3 +1,4 @@
+package Day2;
 import java.util.Arrays;
 
 public class BucketSort {
@@ -21,7 +22,7 @@ public class BucketSort {
         int n = arr.length;
         int[] output = new int[n];
         int[] count = new int[10];//0-9 = 10 elements
-        //Count the number of occurrences for each elements
+        //Count the number of occurrences for each element
         for(int i = 0; i < n; i++){
             int digit = (arr[i]/exp) % 10; // 325/1 = 325 % 10 = 5
                 count[digit]++;

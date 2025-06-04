@@ -1,3 +1,4 @@
+package Day2;
 public class RecursiveBinary {
     public static int recursiveBinary(int[] arr, int key, int start, int end) {
         if (start > end) {

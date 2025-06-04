@@ -1,3 +1,4 @@
+package Day2;
 public class MaxMinValues {
     public static void main(String[] args){
         System.out.println("Max integer: " + Integer.MAX_VALUE);

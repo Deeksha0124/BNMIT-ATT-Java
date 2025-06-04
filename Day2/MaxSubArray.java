@@ -1,3 +1,4 @@
+package Day2;
 public class MaxSubArray {
     public static int kadaneAlgo(int[] arr){
         int cmax = arr[0];

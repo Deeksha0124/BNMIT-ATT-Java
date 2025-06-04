@@ -1,3 +1,4 @@
+package Day2;
 public class JaggedArrays {
     public static void main(String[] args) {
         //array of arrays (row x col)
