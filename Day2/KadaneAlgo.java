@@ -1,5 +1,5 @@
 package Day2;
-public class MaxSubArray {
+public class KadaneAlgo {
     public static int kadaneAlgo(int[] arr){
         int cmax = arr[0];
         int gmax = arr[0];
