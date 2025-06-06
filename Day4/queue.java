@@ -80,7 +80,7 @@ public class queue {
     }
     public static void main(String[] args) {
         queue queue =  new queue();
-        int [] arr = {10, 20, 30, 40, 50};
+        int [] arr = {10, 20, 30, 40, 60};
         for(int x: arr){
             queue.enqueue(x);
 
