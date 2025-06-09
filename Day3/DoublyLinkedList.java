@@ -3,18 +3,12 @@ class Node {
     int data;
     Node prev;
     Node next;
-
-
-
-
     Node(int data){
         this.data = data;
         prev = null;
         next = null;
     }
 }
-
-
 public class DoublyLinkedList {
     Node head;
     // Insert at end
@@ -31,17 +25,30 @@ public class DoublyLinkedList {
         temp.next = newNode;
         newNode.prev = temp;
     }
-
-
-    public void innerAtPos(int data, int pos){
-        Node newNode = new Node(data);
-        if(pos <= 0){
-            System.out.print("Invalid position");
+    public void deleteFromEnd(){
+        if(head == null){
+            System.out.println("Empty List. Can't delete node.");
             return;
         }
-        if(pos == 1){
+        if(head.next == null){
+            head = null;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        temp.prev.next = null;
+    }
+    public void insertAtPosition(int data, int position){
+        Node newNode = new Node(data);
+        if(position <= 0){
+            System.out.println("Invalid Position.");
+            return;
+        }
+        if (position == 1){
             newNode.next = head;
-            if(head != null){
+            if(head != null){ // For multiple nodes
                 head.prev = newNode;
             }
             head = newNode;
@@ -49,12 +56,12 @@ public class DoublyLinkedList {
         }
         Node temp = head;
         int i = 1;
-        while(temp != null && i < pos-1){
+        while (temp != null && i < position - 1){
             temp = temp.next;
             i++;
         }
         if(temp == null){
-            System.out.print("Invalid position, Out of Range");
+            System.out.println("Position out of range.");
             return;
         }
         newNode.next = temp.next;
@@ -63,26 +70,27 @@ public class DoublyLinkedList {
             temp.next.prev = newNode;
         }
         temp.next = newNode;
+
     }
-
-
-
     public void display(){
         Node temp = head;
-        while (temp != null){ // for multiple nodes
+        while (temp != null){
             System.out.print(temp.data + "->");
             temp = temp.next;
         }
         System.out.println("null");
     }
-
-
-
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
         dll.insert(10);
         dll.insert(20);
         dll.insert(30);
+        dll.display();
+        // dll.deleteFromEnd();
+        dll.display();
+        dll.insertAtPosition(25,3);
+        dll.display();
+        dll.insertAtPosition(250,30);
         dll.display();
     }
 }
